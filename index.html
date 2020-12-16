@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box"></div>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0d2c17;
+      }
+
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 180px auto 0;
+        position: relative;
+        background: #2c2426;
+      }
+
+      .box:before,
+      .box:after {
+        content: "";
+        top: -2px;
+        left: -2px;
+        position: absolute;
+        background: linear-gradient(
+          45deg,
+          #ff0037,
+          #ff00f2,
+          #f84983,
+          #fffb00,
+          #9dff00,
+          #fba300,
+          #ff6600,
+          #ff3c00,
+          #3348ff,
+          #ae00ff
+        );
+        background-size: 400%;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        z-index: -1;
+        animation: glow 20s linear infinite;
+      }
+
+      .box:after {
+        filter: blur(30px);
+      }
+
+      @keyframes glow {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+    </style>
+  </body>
+</html>
